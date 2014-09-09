@@ -1,0 +1,11 @@
+# compiled python files
+*.py[cod]
+
+# ignore IDE
+.idea/
+
+# Ignore version.txt (used internally)
+version.txt
+
+# Ignore output directory (for emote packs)
+output/
