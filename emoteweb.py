@@ -21,7 +21,7 @@ def hook():
     if bottle.request.get_header('X-Github-Event') is None:
         bottle.abort(400, "You're not someone I want to talk to")
     with open('version.txt', 'w') as f:
-        f.write(data['commit'][0]['timestamp'])
+        f.write(data['commits'][0]['timestamp'])
 
     proc = subprocess.Popen(['sh', 'hook.sh'])
 
