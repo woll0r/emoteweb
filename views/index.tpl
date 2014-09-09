@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/css/normalize.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/css/foundation.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"/>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        a.button {
+            margin: 0 !important;
+        }
+    </style>
 </head>
 <body>
 <div class="row">
@@ -21,42 +30,42 @@
             <table>
                 <thead>
                 <tr>
-                    <th>Client</th>
+                    <th style="width: 66%">Client</th>
                     <th>Download</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <td>Adium</td>
-                    <td><a href="/output/adium.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/adium.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>Gajim</td>
-                    <td><a href="/output/gajim.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/gajim.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>Instantbird</td>
-                    <td><a href="/output/instantbird.xpi" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/instantbird.xpi" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>phpBB</td>
-                    <td><a href="/output/phpBB.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/phpBB.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>Pidgin</td>
-                    <td><a href="/output/pidgin.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/pidgin.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>Psi</td>
-                    <td><a href="/output/psi.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/psi.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>Trillian</td>
-                    <td><a href="/output/Trillian.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/Trillian.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 <tr>
                     <td>Vacuum</td>
-                    <td><a href="/output/vacuum.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                    <td><a href="/output/vacuum.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 </tbody>
             </table>
