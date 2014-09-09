@@ -7,7 +7,7 @@
 VIRTUALENV=/home/wolfgang/tadaenv
 TADAPATH=/home/wolfgang/tada
 EMOTEPATH=/home/wolfgang/emotes
-CURRENTDIR=`pwd`
+WEBDIR=/var/www/emotes.cardboardbox.be
 
 # Update emotes
 cd $EMOTEPATH/input
@@ -15,7 +15,8 @@ git pull
 
 # Run Tada
 cd $EMOTEPATH
+mkdir output
 $VIRTUALENV/bin/python $TADAPATH/main.py
 
 # Move output over here
-mv $EMOTEPATH/output %CURRENTDIR/
+mv $EMOTEPATH/output $WEBDIR/
