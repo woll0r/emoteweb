@@ -22,8 +22,6 @@
                 <thead>
                 <tr>
                     <th>Client</th>
-                </tr>
-                <tr>
                     <th>Download</th>
                 </tr>
                 </thead>
