@@ -12,76 +12,56 @@
 <div class="row">
     <div class="small-12 columns">
         <h1>Ponypack downloads</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 columns">
-        <p>Built {{version}}</p>
+        <h3>Built {{version}}</h3>
     </div>
 </div>
 <div id="contents">
     <div class="row">
-        <div class="small-9 columns">
-            <p>Adium</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/adium.zip" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>Gajim</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/gajim.zip" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>InstantBird</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/instantbird.xpi" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>phpBB</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/phpBB.zip" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>Pidgin</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/pidgin.zip" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>Psi</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/psi.zip" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>Trillian</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/trillian.zip" class="button"><i class="fi-download"></i> Download</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-9 columns">
-            <p>Vacuum</p>
-        </div>
-        <div class="small-3 columns">
-            <a href="/output/vacuum.zip" class="button"><i class="fi-download"></i> Download</a>
+        <div class="small-12 columns">
+            <table>
+                <thead>
+                <tr>
+                    <th>Client</th>
+                </tr>
+                <tr>
+                    <th>Download</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Adium</td>
+                    <td><a href="/output/adium.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>Gajim</td>
+                    <td><a href="/output/gajim.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>Instantbird</td>
+                    <td><a href="/output/instantbird.xpi" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>phpBB</td>
+                    <td><a href="/output/phpBB.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>Pidgin</td>
+                    <td><a href="/output/pidgin.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>Psi</td>
+                    <td><a href="/output/psi.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>Trillian</td>
+                    <td><a href="/output/Trillian.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                <tr>
+                    <td>Vacuum</td>
+                    <td><a href="/output/vacuum.zip" class="button"><i class="fi-download"></i> Download</a></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
