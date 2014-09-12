@@ -20,8 +20,9 @@ def hook():
         bottle.abort(400, "Didn't receive proper input.")
     if bottle.request.get_header('X-Github-Event') is None:
         bottle.abort(400, "You're not someone I want to talk to")
+    jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
     with open('version.txt', 'w') as f:
-        f.write(data['commits'][0]['timestamp'])
+        json.dump(jsondata, f)
 
     proc = subprocess.Popen(['sh', 'hook.sh'])
 
@@ -30,10 +31,13 @@ def hook():
 
 @app.route('/')
 def index():
-    version = ''
+    data = None
     with open('version.txt', 'r') as f:
-        version = f.readline()
-    output = bottle.template('index', version=version)
+        data = json.load(f)
+    version = data['version']
+    message = data['message']
+    
+    output = bottle.template('index', version=version, message=message)
     return output
 
 

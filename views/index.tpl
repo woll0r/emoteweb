@@ -22,6 +22,7 @@
     <div class="small-12 columns">
         <h1>Ponypack downloads</h1>
         <h3>Built {{version}}</h3>
+		<p>Commit message: {{message}}</p>
     </div>
 </div>
 <div id="contents">
