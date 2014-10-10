@@ -8,7 +8,7 @@ import json
 
 runningpath = os.path.dirname(os.path.abspath(__file__))
 staticroot = runningpath + '/static'
-webpath = os.path.dirname('/var/www/emotes.cardboardbox.be')
+webpath = os.path.dirname('/var/www/emotes.cardboardbox.be/')
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
