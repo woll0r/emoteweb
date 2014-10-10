@@ -8,6 +8,7 @@ import json
 
 runningpath = os.path.dirname(os.path.abspath(__file__))
 staticroot = runningpath + '/static'
+webpath = os.path.dirname('/var/www/emotes.cardboardbox.be')
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,8 +38,9 @@ def index():
         data = json.load(f)
     version = data['version']
     message = data['message']
+    dirlist = os.listdir(os.path.join(webpath, 'output'))
     
-    output = bottle.template('index', version=version, message=message)
+    output = bottle.template('index', version=version, message=message, dirlist=dirlist)
     return output
 
 

@@ -1,3 +1,5 @@
+% import os
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -31,43 +33,17 @@
             <table>
                 <thead>
                 <tr>
-                    <th style="width: 66%">Client</th>
+                    <th style="width: 66%">File</th>
                     <th>Download</th>
                 </tr>
                 </thead>
                 <tbody>
+                % for filename in dirlist:
                 <tr>
-                    <td>Adium</td>
-                    <td><a href="/output/adium.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
+                    <td>{{ os.path.splitext(filename) }}</td>
+                    <td><a href="/output/{{filename}}" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
-                <tr>
-                    <td>Gajim</td>
-                    <td><a href="/output/gajim.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                <tr>
-                    <td>Instantbird</td>
-                    <td><a href="/output/instantbird.xpi" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                <tr>
-                    <td>phpBB</td>
-                    <td><a href="/output/phpBB.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                <tr>
-                    <td>Pidgin</td>
-                    <td><a href="/output/pidgin.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                <tr>
-                    <td>Psi</td>
-                    <td><a href="/output/psi.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                <tr>
-                    <td>Trillian</td>
-                    <td><a href="/output/Trillian.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                <tr>
-                    <td>Vacuum</td>
-                    <td><a href="/output/vacuum.zip" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
+                % end
                 </tbody>
             </table>
         </div>

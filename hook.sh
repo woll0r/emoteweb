@@ -10,13 +10,14 @@ EMOTEPATH=/home/wolfgang/emotes
 WEBDIR=/var/www/emotes.cardboardbox.be
 
 # Update emotes
-cd $EMOTEPATH/input
-git pull
-
-# Run Tada
 cd $EMOTEPATH
-mkdir output
-$VIRTUALENV/bin/python $TADAPATH/main.py
+git remote update
+git pull --all
 
-# Move output over here
-mv $EMOTEPATH/output $WEBDIR/
+for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
+    # Switch to branch
+    git branch $branch
+
+    # Run Tada
+    $VIRTUALENV/bin/python $TADAPATH/main.py -i $EMOTEPATH -o $WEBDIR/output
+done
