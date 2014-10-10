@@ -40,7 +40,7 @@
                 <tbody>
                 % for filename in dirlist:
                 <tr>
-                    <td>{{ os.path.splitext(filename) }}</td>
+                    <td>{{ os.path.splitext(filename)[0] }}</td>
                     <td><a href="/output/{{filename}}" class="button small expand"><i class="fi-download"></i> Download</a></td>
                 </tr>
                 % end
