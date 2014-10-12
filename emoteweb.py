@@ -38,7 +38,7 @@ def index():
         data = json.load(f)
     version = data['version']
     message = data['message']
-    dirlist = os.listdir(os.path.join(webpath, 'output'))
+    dirlist = os.listdir(os.path.join(webpath, 'output')).sort()
     
     output = bottle.template('index', version=version, message=message, dirlist=dirlist)
     return output
