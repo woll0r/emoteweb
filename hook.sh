@@ -20,5 +20,5 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
     git checkout $branch
 
     # Run Tada
-    $VIRTUALENV/bin/python $TADAPATH/main.py -i $EMOTEPATH -o $WEBDIR/output
+    $VIRTUALENV/bin/python $TADAPATH/main.py -i $EMOTEPATH -o $WEBDIR/output -n $branch
 done
