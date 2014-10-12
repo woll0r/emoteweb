@@ -15,7 +15,9 @@ git checkout master
 git remote update
 git pull --all
 
-for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
+for ref in $(git for-each-ref --format='%(refname)' refs/heads/); do
+    branch=$(basename $ref)
+
     # Switch to branch
     git checkout $branch
 
