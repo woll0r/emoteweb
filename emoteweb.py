@@ -22,13 +22,16 @@ def hook():
         bottle.abort(400, "Didn't receive proper input.")
     if bottle.request.get_header('X-Github-Event') is None:
         bottle.abort(400, "You're not someone I want to talk to")
-    jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
-    with open('version.txt', 'w') as f:
-        json.dump(jsondata, f)
+    if bottle.request.get_header('X-Github-Event') is 'ping':
+        return 'Pong!'
+    else:
+        jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
+        with open('version.txt', 'w') as f:
+            json.dump(jsondata, f)
 
-    proc = subprocess.Popen(['sh', 'hook.sh'])
+        proc = subprocess.Popen(['sh', 'hook.sh'])
 
-    return 'OK!'
+        return 'OK!'
 
 
 @app.route('/')
