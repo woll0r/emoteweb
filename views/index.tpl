@@ -23,8 +23,6 @@
 <div class="row">
     <div class="small-12 columns">
         <h1>Ponypack downloads</h1>
-        <h3>Built {{version}}</h3>
-		<p>Commit message: {{message}}</p>
     </div>
 </div>
 <div id="contents">
@@ -55,7 +53,7 @@
     <div class="small-12 columns">
         <ul class="inline-list right">
             <li>
-                <a href="https://github.com/Woll0r/BERACHS_COMPLETE_PIDGIN"><i class="fi-social-github"></i> Emotes</a>
+                <a href="https://github.com/XyyxShard/Ponysquad-Emote-Pack"><i class="fi-social-github"></i> Emotes</a>
             </li>
             <li>
                 <a href="https://github.com/Woll0r/emoteweb"><i class="fi-social-github"></i> Sources</a>

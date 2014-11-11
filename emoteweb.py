@@ -25,27 +25,16 @@ def hook():
     if bottle.request.get_header('X-Github-Event') is 'ping':
         return 'Pong!'
     else:
-        jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
-        with open('version.txt', 'w') as f:
-            json.dump(jsondata, f)
-
-        proc = subprocess.Popen(['sh', 'hook.sh'])
-
         return 'OK!'
 
 
 @app.route('/')
 def index():
-    data = None
-    with open('version.txt', 'r') as f:
-        data = json.load(f)
-    version = data['version']
-    message = data['message']
     dirlist = os.listdir(os.path.join(webpath, 'output'))
 
     dirlist.sort()
     
-    output = bottle.template('index', version=version, message=message, dirlist=dirlist)
+    output = bottle.template('index', dirlist=dirlist)
     return output
 
 
