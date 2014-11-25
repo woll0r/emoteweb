@@ -42,12 +42,13 @@ def index():
 
     res = requests.get('https://api.github.com/repos/XyyxShard/Ponysquad-Emote-Pack/git/refs/heads/master')
 
-    commit = res.json['object']['url']
+    commit = res.json()
 
-    data = requests.get(commit)
+    data = requests.get(commit['object']['url'])
+    jsondata = data.json()
 
-    version = data.json['committer']['date']
-    message = data.json['message']
+    version = jsondata['committer']['date']
+    message = jsondata['message']
 
     dirlist = os.listdir(os.path.join(webpath, 'output'))
 
