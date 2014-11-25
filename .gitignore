@@ -4,6 +4,9 @@
 # ignore IDE
 .idea/
 
+# Ignore virtualenv
+.env/
+
 # Ignore version.txt (used internally)
 version.txt
 

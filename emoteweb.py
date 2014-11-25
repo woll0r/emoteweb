@@ -5,6 +5,7 @@ import bottle
 import os
 import subprocess
 import json
+import requests
 
 runningpath = os.path.dirname(os.path.abspath(__file__))
 staticroot = runningpath + '/static'
@@ -25,9 +26,9 @@ def hook():
     if bottle.request.get_header('X-Github-Event') is 'ping':
         return 'Pong!'
     else:
-        jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
-        with open('version.txt', 'w') as f:
-            json.dump(jsondata, f)
+        #jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
+        #with open('version.txt', 'w') as f:
+        #    json.dump(jsondata, f)
 
         proc = subprocess.Popen(['sh', 'hook.sh'])
         return 'OK!'
@@ -36,11 +37,17 @@ def hook():
 @app.route('/')
 def index():
     data = None
-    with open('version.txt', 'r') as f:
-        data = json.load(f)
+    #with open('version.txt', 'r') as f:
+    #    data = json.load(f)
 
-    version = data['version']
-    message = data['message']
+    res = requests.get('https://api.github.com/repos/XyyxShard/Ponysquad-Emote-Pack/git/refs/heads/master')
+
+    commit = res.json['object']['url']
+
+    data = requests.get(commit)
+
+    version = data.json['committer']['date']
+    message = data.json['message']
 
     dirlist = os.listdir(os.path.join(webpath, 'output'))
 
