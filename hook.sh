@@ -15,12 +15,5 @@ git checkout master
 git remote update
 git pull --all
 
-for ref in $(git for-each-ref --format='%(refname)' refs/heads/); do
-    branch=$(basename $ref)
-
-    # Switch to branch
-    git checkout $branch
-
-    # Run Tada
-    $VIRTUALENV/bin/python $TADAPATH/main.py -i $EMOTEPATH -o $WEBDIR/output -n Ponypack-$branch
-done
+# Run Tada
+$VIRTUALENV/bin/python $TADAPATH/main.py -i $EMOTEPATH -o $WEBDIR/output -n Ponypack
