@@ -71,11 +71,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.tooltip.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.equalizer.min.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$(document).foundation();
-	});
+<script src="/static/script.js"></script>
 
-</script>
 </body>
 </html>
