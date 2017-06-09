@@ -25,7 +25,7 @@
         <h1>Ponypack downloads</h1>
         <h4>Latest commit</h4>
         <p>
-        % for msg in message
+        % for msg in message:
         {{msg}}<br />
         % end
         <br />
