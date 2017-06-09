@@ -49,6 +49,7 @@ def index():
 
     version = jsondata['committer']['date']
     message = jsondata['message']
+    message = message.replace('\n', '<br />')
 
     dirlist = os.listdir(os.path.join(webpath, 'output'))
 

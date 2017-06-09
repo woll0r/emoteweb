@@ -23,8 +23,8 @@
 <div class="row">
     <div class="small-12 columns">
         <h1>Ponypack downloads</h1>
-        <p>Latest commit: {{message}}<br />
-        Built: {{version}}</p>
+        <blockquote>Latest commit: {{message}}
+        <cite>Built: {{version}}</cite></blockquote>
     </div>
 </div>
 <div id="contents">
