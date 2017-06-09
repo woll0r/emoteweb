@@ -28,7 +28,6 @@
         % for msg in message:
         {{msg}}<br />
         % end
-        <br />
         <small>Built: {{version}}</small>
         </p>
     </div>
