@@ -28,7 +28,7 @@
         % for msg in message:
         {{msg}}<br />
         % end
-        <small>Built: {{version}}</small>
+        <small>Last commit: {{version}}</small>
         </p>
     </div>
 </div>
