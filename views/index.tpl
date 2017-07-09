@@ -33,20 +33,24 @@
     </div>
 </div>
 <div id="contents">
-    % if status is 'fail':
-    <div data-alert class="alert-box alert">
-        <strong>DANGER WILL ROBINSON!</strong>
-        Something went wrong while processing emotes! These packs might not be up to date!
-        <a href="#" class="close">&times;</a>
-    </div>
-    % elif status is 'updating':
-    <div data-alert class="alert-box warning">
-        Emote packs are currently updating!
-        <a href="#" class="close">&times;</a>
-    </div>
-    % end
     <div class="row">
         <div class="small-12 columns">
+            % if status is 'fail':
+            <div data-alert class="alert-box alert">
+                <strong>DANGER WILL ROBINSON!</strong>
+                Something went wrong while processing emotes! These packs might not be up to date!
+                <a href="#" class="close">&times;</a>
+            </div>
+            % elif status is 'updating':
+            <div data-alert class="alert-box warning">
+                Emote packs are currently updating!
+                <a href="#" class="close">&times;</a>
+            </div>
+            % else
+            <div data-alert class="alert-box success">
+                {{ status }}
+            </div>
+            % end
             <table>
                 <thead>
                 <tr>
