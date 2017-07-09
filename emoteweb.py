@@ -39,7 +39,7 @@ def index():
     data = None
     
     with open('status.txt', 'r') as f:
-        status = f.read()
+        status = f.read().strip('\n')
 
     res = requests.get('https://api.github.com/repos/XyyxShard/Ponysquad-Emote-Pack/git/refs/heads/master')
 
