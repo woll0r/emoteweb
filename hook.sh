@@ -9,16 +9,16 @@ TADAPATH=/home/wolfgang/tada
 EMOTEPATH=/home/wolfgang/emotes
 WEBDIR=/var/www/emotes.cardboardbox.be
 
-PWD=`pwd`
+STARTDIR=`pwd`
 
 error_exit() {
-    echo 'fail' > $PWD/status.txt
+    echo 'fail' > $STARTDIR/status.txt
     exit 1
 }
 
 trap 'error_exit' ERR
 
-echo 'updating' > $PWD/status.txt
+echo 'updating' > $STARTDIR/status.txt
 
 # Update emotes
 cd $EMOTEPATH
@@ -29,4 +29,4 @@ git pull --all
 # Run Tada
 $VIRTUALENV/bin/python $TADAPATH/main.py -i $EMOTEPATH -o $WEBDIR/output -n Ponypack
 
-echo 'success' > $PWD/status.txt
+echo 'success' > $STARTDIR/status.txt
