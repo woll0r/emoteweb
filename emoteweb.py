@@ -37,9 +37,9 @@ def hook():
 @app.route('/')
 def index():
     data = None
-    
+
     with open('status.txt', 'r') as f:
-        status = f.read().strip('\n')
+        status = f.read().replace('\n', '')
 
     res = requests.get('https://api.github.com/repos/XyyxShard/Ponysquad-Emote-Pack/git/refs/heads/master')
 
@@ -55,7 +55,7 @@ def index():
     dirlist = os.listdir(os.path.join(webpath, 'output'))
 
     dirlist.sort()
-    
+
     output = bottle.template('index', dirlist=dirlist, version=version, message=message, status=status)
     return output
 
