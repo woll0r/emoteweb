@@ -46,7 +46,7 @@
                 Emote packs are currently updating!
                 <a href="#" class="close">&times;</a>
             </div>
-            % else
+            % else:
             <div data-alert class="alert-box success">
                 {{ status }}
             </div>
