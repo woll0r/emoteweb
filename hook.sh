@@ -10,7 +10,7 @@ EMOTEPATH=/home/wolfgang/emotes
 WEBDIR=/var/www/emotes.cardboardbox.be
 
 error_exit() {
-    echo 'failure' > status.txt
+    echo 'fail' > status.txt
     exit 1
 }
 
