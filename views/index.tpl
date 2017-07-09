@@ -35,13 +35,13 @@
 <div id="contents">
     <div class="row">
         <div class="small-12 columns">
-            % if status is 'fail':
+            % if status == 'fail':
             <div data-alert class="alert-box alert">
                 <strong>DANGER WILL ROBINSON!</strong>
                 Something went wrong while processing emotes! These packs might not be up to date!
                 <a href="#" class="close">&times;</a>
             </div>
-            % elif status is 'updating':
+            % elif status == 'updating':
             <div data-alert class="alert-box warning">
                 Emote packs are currently updating!
                 <a href="#" class="close">&times;</a>
