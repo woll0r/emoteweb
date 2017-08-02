@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import bottle
+"""A simple webpage to host emotes and automatically convert when the upstream
+emote repository gets updated"""
+
 import os
 import subprocess
-import json
+
+import bottle
 import requests
 
 runningpath = os.path.dirname(os.path.abspath(__file__))
@@ -18,6 +21,7 @@ app = application = bottle.Bottle()
 
 @app.route('/hook', method='POST')
 def hook():
+    """Hook that launches the emote conversion when the repo is updated"""
     data = bottle.request.json
     if data is None:
         bottle.abort(400, "Didn't receive proper input.")
@@ -26,16 +30,13 @@ def hook():
     if bottle.request.get_header('X-Github-Event') is 'ping':
         return 'Pong!'
     else:
-        #jsondata = {'version': data['commits'][0]['timestamp'], 'message': data['commits'][0]['message']}
-        #with open('version.txt', 'w') as f:
-        #    json.dump(jsondata, f)
-
         proc = subprocess.Popen(['sh', 'hook.sh'])
         return 'OK!'
 
 
 @app.route('/')
 def index():
+    """Show the list of emote packs available together with some other info"""
     data = None
 
     with open('status.txt', 'r') as f:
@@ -62,8 +63,9 @@ def index():
 
 @app.route('/static/<filepath:path>')
 def server_static(filepath):
+    """Return static files"""
     return bottle.static_file(filepath, root=staticroot)
 
 
 if __name__ == '__main__':
-    bottle.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
