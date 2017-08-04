@@ -28,6 +28,6 @@ git remote update
 git pull --all
 
 # Run Tada
-$VIRTUALENV/bin/python $EMOTE_TADAPATH/main.py -i $EMOTE_PATH -o $EMOTE_WEBDIR/output -n Ponypack
+python $EMOTE_TADAPATH/main.py -i $EMOTE_PATH -o $EMOTE_WEBDIR/output -n Ponypack
 
 echo 'success' > $STARTDIR/status.txt
