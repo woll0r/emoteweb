@@ -44,16 +44,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    % for filename in dirlist:
                     <tr>
-                        % for filename in dirlist:
                         <td class="w-75 align-middle">{{ os.path.splitext(filename)[0] }}</td>
                         <td>
                             <a href="/output/{{filename}}" class="btn btn-block btn-primary">
                                 <i class="fa fa-download" aria-hidden="true"></i> Download
                             </a>
                         </td>
-                        % end
                     </tr>
+                    % end
                 </tbody>
             </table>
         </div>
