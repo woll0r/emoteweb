@@ -1,94 +1,78 @@
 % import os
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>Ponypack Downloads</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/normalize.min.css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.min.css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"/>
-    <style>
-        table {
-            width: 100%;
-        }
-
-        a.button {
-            margin: 0 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha256-rr9hHBQ43H7HSOmmNkxzQGazS/Khx+L8ZRHteEY1tQ4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 </head>
 <body>
-<div class="row">
-    <div class="small-12 columns">
-        <h1>Ponypack downloads</h1>
-        <h4>Latest commit</h4>
-        <p>
-        % for msg in message:
-        {{msg}}<br />
-        % end
-        <small>Last commit: {{version}}</small>
-        </p>
-    </div>
-</div>
-<div id="contents">
+<div class="container">
     <div class="row">
-        <div class="small-12 columns">
+        <div class="col">
+            <h1>Ponypack downloads</h1>
             % if status == 'fail':
-            <div data-alert class="alert-box alert">
-                <strong>DANGER WILL ROBINSON!</strong>
+            <div class="alert alert-danger" role="alert">
+                <strong>Danger Will Robinson!</strong>
                 Something went wrong while processing emotes! These packs might not be up to date!
-                <a href="#" class="close">&times;</a>
             </div>
             % elif status == 'updating':
-            <div data-alert class="alert-box warning">
-                Emote packs are currently updating!
-                <a href="#" class="close">&times;</a>
+            <div class="alert alert-warning" role="alert">
+                Emotes are updating, please refresh the page in a few moments to get the latest emotes!
             </div>
             % end
-            <table>
+            <h4>Latest commit</h4>
+            <p>
+                % for msg in message:
+                {{msg}}<br />
+                % end
+                <small>Last commit: {{version}}</small>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
                 <thead>
-                <tr>
-                    <th style="width: 66%">File</th>
-                    <th>Download</th>
-                </tr>
+                    <tr>
+                        <td class="w-75">File</td>
+                        <td>Download</td>
+                    </tr>
                 </thead>
                 <tbody>
-                % for filename in dirlist:
-                <tr>
-                    <td>{{ os.path.splitext(filename)[0] }}</td>
-                    <td><a href="/output/{{filename}}" class="button small expand"><i class="fi-download"></i> Download</a></td>
-                </tr>
-                % end
+                    <tr>
+                        % for filename in dirlist:
+                        <td class="w-75 align-middle">{{ os.path.splitext(filename)[0] }}</td>
+                        <td>
+                            <a href="/output/{{filename}}" class="btn btn-block btn-primary">
+                                <i class="fa fa-download" aria-hidden="true"></i> Download
+                            </a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <footer class="text-right">
+                <a href="https://github.com/XyyxShard/Ponysquad-Emote-Pack" class="btn btn-link">
+                    <i class="fa fa-github" aria-hidden="true"></i> Emotes
+                </a>
+                <a href="https://github.com/Woll0r/emoteweb" class="btn btn-link">
+                    <i class="fa fa-github" aria-hidden="true"></i> Sources
+                </a>
+            </footer>
+        </div>
+    </div>
 </div>
 
-<footer class="row" style="max-width: 100%">
-    <hr/>
-    <div class="small-12 columns">
-        <ul class="inline-list right">
-            <li>
-                <a href="https://github.com/XyyxShard/Ponysquad-Emote-Pack"><i class="fi-social-github"></i> Emotes</a>
-            </li>
-            <li>
-                <a href="https://github.com/Woll0r/emoteweb"><i class="fi-social-github"></i> Sources</a>
-            </li>
-        </ul>
-    </div>
-</footer>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/vendor/modernizr.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/vendor/jquery.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.topbar.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.tooltip.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation/foundation.equalizer.min.js"></script>
-
-<script src="/static/script.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
 </body>
 </html>
