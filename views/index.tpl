@@ -52,6 +52,7 @@
                                 <i class="fa fa-download" aria-hidden="true"></i> Download
                             </a>
                         </td>
+                        % end
                     </tr>
                 </tbody>
             </table>
