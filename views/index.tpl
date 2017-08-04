@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Ponypack downloads</h1>
+            <h1>Emote pack downloads</h1>
             % if status == 'fail':
             <div class="alert alert-danger" role="alert">
                 <strong>Danger Will Robinson!</strong>
@@ -61,7 +61,7 @@
     <div class="row">
         <div class="col">
             <footer class="text-right">
-                <a href="https://github.com/XyyxShard/Ponysquad-Emote-Pack" class="btn btn-link">
+                <a href="https://github.com/{{ githubrepo }}" class="btn btn-link">
                     <i class="fa fa-github" aria-hidden="true"></i> Emotes
                 </a>
                 <a href="https://github.com/Woll0r/emoteweb" class="btn btn-link">
