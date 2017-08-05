@@ -10,6 +10,7 @@
 #WEBDIR=/var/www/emotes.cardboardbox.be
 
 STARTDIR=`pwd`
+INPATH=${EMOTE_PATH:=$STARTDIR/emotes}
 WEBDIR=${EMOTE_WEBDIR:=$STARTDIR}
 
 error_exit() {
@@ -22,12 +23,12 @@ trap 'error_exit' ERR
 echo 'updating' > $STARTDIR/status.txt
 
 # Update emotes
-cd $EMOTE_PATH
+cd $INPATH
 git checkout master
 git remote update
 git pull --all
 
 # Run Tada
-python $EMOTE_TADAPATH/main.py -i $EMOTE_PATH -o $EMOTE_WEBDIR/output -n Ponypack
+python $EMOTE_TADAPATH/main.py -i $INPATH -o $WEBDIR/output -n ${EMOTE_NAME:=Emotes}
 
 echo 'success' > $STARTDIR/status.txt
