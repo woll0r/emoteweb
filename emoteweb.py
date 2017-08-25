@@ -16,7 +16,7 @@ staticroot = runningpath + '/static'
 if "EMOTE_WEBPATH" in os.environ:
     webpath = os.path.dirname(os.getenv("EMOTE_WEBPATH"))
 else:
-    webpath = runningpath + '/static'
+    webpath = runningpath + '/output'
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -82,6 +82,7 @@ def server_static(filepath):
 @app.route('/output/<filepath:path>')
 def server_output(filepath):
     """Return emote pack from output folder if in the same folder"""
+    return bottle.static_file(filepath, root=webpath)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
