@@ -11,7 +11,7 @@
 
 STARTDIR=`pwd`
 INPATH=${EMOTE_PATH:=$STARTDIR/emotes}
-WEBDIR=${EMOTE_WEBDIR:=$STARTDIR}
+WEBDIR=${EMOTE_WEBPATH:=$STARTDIR}
 
 error_exit() {
     echo 'fail' > $STARTDIR/status.txt
