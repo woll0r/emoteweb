@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Ponypack downloads</h1>
+            <h1>Emote pack downloads</h1>
             % if status == 'fail':
             <div class="alert alert-danger" role="alert">
                 <strong>Danger Will Robinson!</strong>
@@ -39,7 +39,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td class="w-75">File</td>
+                        <td class="w-75">Emote pack</td>
                         <td>Download</td>
                     </tr>
                 </thead>
@@ -60,8 +60,29 @@
     </div>
     <div class="row">
         <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td class="w-75">Other nice things</td>
+                        <td>Link</td>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td class="w-75 align-middle">Conversations with emote support</td>
+                        <td>
+                            <a href="https://github.com/gamefreak/Conversations/releases" class="btn btn-block btn-primary">
+                                <i class="fa fa-external-link" aria-hidden="true"></i> Link
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <footer class="text-right">
-                <a href="https://github.com/XyyxShard/Ponysquad-Emote-Pack" class="btn btn-link">
+                <a href="https://github.com/{{ githubrepo }}" class="btn btn-link">
                     <i class="fa fa-github" aria-hidden="true"></i> Emotes
                 </a>
                 <a href="https://github.com/Woll0r/emoteweb" class="btn btn-link">

@@ -12,7 +12,11 @@ import requests
 
 runningpath = os.path.dirname(os.path.abspath(__file__))
 staticroot = runningpath + '/static'
-webpath = os.path.dirname('/var/www/emotes.cardboardbox.be/')
+#webpath = os.path.dirname('/var/www/emotes.cardboardbox.be/')
+if "EMOTE_WEBPATH" in os.environ:
+    webpath = os.path.dirname(os.getenv("EMOTE_WEBPATH"))
+else:
+    webpath = runningpath + '/output'
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -42,7 +46,11 @@ def index():
     with open('status.txt', 'r') as f:
         status = f.read().replace('\n', '')
 
-    res = requests.get('https://api.github.com/repos/XyyxShard/Ponysquad-Emote-Pack/git/refs/heads/master')
+    githubrepo = os.getenv("EMOTE_REPO")
+
+    res = requests.get('https://api.github.com/repos/' +
+                       githubrepo +
+                       '/git/refs/heads/master')
 
     commit = res.json()
 
@@ -57,7 +65,12 @@ def index():
 
     dirlist.sort()
 
-    output = bottle.template('index', dirlist=dirlist, version=version, message=message, status=status)
+    output = bottle.template('index',
+                             dirlist=dirlist,
+                             version=version,
+                             message=message,
+                             status=status,
+                             githubrepo=githubrepo)
     return output
 
 
@@ -66,6 +79,10 @@ def server_static(filepath):
     """Return static files"""
     return bottle.static_file(filepath, root=staticroot)
 
+@app.route('/output/<filepath:path>')
+def server_output(filepath):
+    """Return emote pack from output folder if in the same folder"""
+    return bottle.static_file(filepath, root=webpath)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
