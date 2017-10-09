@@ -39,7 +39,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td class="w-75">File</td>
+                        <td class="w-75">Emote pack</td>
                         <td>Download</td>
                     </tr>
                 </thead>
@@ -54,6 +54,27 @@
                         </td>
                     </tr>
                     % end
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td class="w-75">Other nice things</td>
+                        <td>Link</td>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td class="w-75 align-middle">Conversations with emote support</td>
+                        <td>
+                            <a href="https://github.com/gamefreak/Conversations/releases" class="btn btn-block btn-primary">
+                                <i class="fa fa-external-link" aria-hidden="true"></i> Link
+                            </a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
