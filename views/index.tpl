@@ -78,7 +78,7 @@
                     <tr>
                         <td class="w-75 align-middle">GTK+ that is less shit on Windows</td>
                         <td>
-                            <a href="http://win32builder.gnome.org/gtk+-bundle_3.6.4-20130921_win32.zip" class="btn btn-block btn-primary">
+                            <a href="/static/gtk+-bundle_3.6.4-20130921_win32.zip" class="btn btn-block btn-primary">
                                 <i class="fa fa-external-link" aria-hidden="true"></i> Link
                             </a>
                         </td>
