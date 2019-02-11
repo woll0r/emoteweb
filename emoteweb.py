@@ -10,6 +10,8 @@ import subprocess
 import bottle
 import requests
 
+import json
+
 runningpath = os.path.dirname(os.path.abspath(__file__))
 staticroot = runningpath + '/static'
 #webpath = os.path.dirname('/var/www/emotes.cardboardbox.be/')
@@ -41,21 +43,23 @@ def hook():
 @app.route('/')
 def index():
     """Show the list of emote packs available together with some other info"""
-    data = None
 
     with open('status.txt', 'r') as f:
         status = f.read().replace('\n', '')
 
     githubrepo = os.getenv("EMOTE_REPO")
 
-    res = requests.get('https://api.github.com/repos/' +
-                       githubrepo +
-                       '/git/refs/heads/master')
+    #res = requests.get('https://api.github.com/repos/' +
+    #                   githubrepo +
+    #                   '/git/refs/heads/master')
 
-    commit = res.json()
+    #commit = res.json()
 
-    data = requests.get(commit['object']['url'])
-    jsondata = data.json()
+    #data = requests.get(commit['object']['url'])
+    #jsondata = data.json()
+
+    with open('commit.json', 'r') as j:
+        jsondata = json.load(j)
 
     version = jsondata['committer']['date']
     message = jsondata['message']

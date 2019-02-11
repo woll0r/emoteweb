@@ -22,6 +22,12 @@ trap 'error_exit' ERR
 
 echo 'updating' > $STARTDIR/status.txt
 
+# Get commit info
+commiturl=$(curl -s -f https://api.github.com/repos/$GITHUBREPO/git/refs/heads/master | jq -r '.object.url')
+if [[ ! -z $commiturl ]]; then
+    curl -s -o commit.json $commiturl
+fi
+
 # Update emotes
 cd $INPATH
 git checkout master
