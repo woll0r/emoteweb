@@ -7,8 +7,9 @@
 # Ignore virtualenv
 .env/
 
-# Ignore status.txt (used internally)
+# Ignore status.txt and commit.json (used internally)
 status.txt
+commit.json
 
 # Ignore output directory (for emote packs)
 output/
